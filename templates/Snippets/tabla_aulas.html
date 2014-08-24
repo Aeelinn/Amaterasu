@@ -1,0 +1,28 @@
+{% if aulas %}
+    {% load staticfiles %}
+    <table>
+        <thead>
+        <tr>
+            <td><b><b>Nombre</b></td>
+            <td><b>Edificio</b></td>
+            <td><b>Modificar</b></td>
+            <td><b>Eliminar</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for aula in aulas %}
+            <tr>
+                <td>{{ aula.nombre }}</td>
+                <td>{{ aula.edificio }}</td>
+                <td><a href="{% url 'Inventario:modificar_aula' aula.pk %}">
+                    <img src="{% static 'img/nicons/editar.png' %}" alt="modificar">
+                </a></td>
+                <td><a href="{% url 'Inventario:eliminar_aula' aula.pk %}">
+                    <img src="{% static 'img/nicons/eliminar.png' %}" alt="eliminar">
+                </a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'Snippets/paginacion.html' %}
+{% endif %}

@@ -1,0 +1,12 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>AGREGAR EDIFICIO</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="boton" value="Agregar">
+    </form>
+{% endblock %}

@@ -1,0 +1,99 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-abr-2014, 23:22:47
+    Author     : URIEL
+*/
+
+.boton {
+    -moz-box-shadow: inset 0px 0px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 0px 0px 0px #ffffff;
+    box-shadow: inset 0px 0px 0px 0px #ffffff;
+
+    background: #0088FA;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+
+    -webkit-border-top-left-radius: 30px;
+    -moz-border-radius-topleft: 20px;
+    border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-bottom-left-radius: 30px;
+    text-indent: 0;
+    border: 0px solid #dcdcdc;
+/ / display : inline-block;
+    color: #ffffff;
+    font-family: laletrailustra;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 30px;
+/ / line-height : 38 px;
+    width: 130px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0px 1px 1px #000000;
+    padding-left: 10px;
+
+}
+
+.boton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00A3FF), color-stop(1, #ededed));
+    background: -moz-linear-gradient(center top, #00A3FF 5%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00A3FF', endColorstr='#ededed');
+    background-color: #00A3FF;
+}
+
+.boton:active {
+    position: relative;
+    top: 1px;
+}
+
+.botonSalir {
+    -moz-box-shadow: inset 0px 0px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 0px 0px 0px #ffffff;
+    box-shadow: inset 0px 0px 0px 0px #ffffff;
+
+    background: #0088FA;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+
+    -webkit-border-top-left-radius: 30px;
+    -moz-border-radius-topleft: 20px;
+    border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-bottom-left-radius: 30px;
+    text-indent: 0;
+    border: 0px solid #dcdcdc;
+/ / display : inline-block;
+    color: yellow;
+    font-family: laletrailustra;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 30px;
+/ / line-height : 38 px;
+    width: 130px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0px 1px 1px #000000;
+    padding-left: 10px;
+
+}

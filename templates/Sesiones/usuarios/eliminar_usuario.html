@@ -1,0 +1,12 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>Eliminar tipo de material</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <p>¿De verdad desea eliminar "{{ tipo }}"?</p>
+        <input type="submit" value="Eliminar" class="boton"/>
+    </form>
+{% endblock %}

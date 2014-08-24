@@ -1,0 +1,12 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>Modificar marca</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Modificar" class="boton">
+    </form>
+{% endblock %}

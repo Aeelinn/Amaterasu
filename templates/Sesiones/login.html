@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load staticfiles %}
+    <link href="{% static 'css/core.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/boton.css' %}" type="text/css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login SAGE</title>
+    <script>
+        history.forward();
+    </script>
+</head>
+<script type="text/javascript" src="jQuery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="jQuery/jquery.bpopup.min.js"></script>
+<script type="text/javascript" src="js/efe.js"></script>
+<body>
+
+
+<div align="center" color="white" class="conte">
+
+    <table width="360" height="auto " border="0" alt="tablaheadinicio">
+        <tr>
+            <td>
+                <div align="left">
+                </div>
+            </td>
+            <td>
+                <div align="center">
+
+
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="logindiv">
+        <table>
+            <tr>
+                <img src="{% static 'img/nicons/mujer.png' %}" alt="hombre" aling="center"/>
+                <td rowspan="3">
+                </td>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.username.errors }}
+                        {{ form.username.label }}<br>
+                        {{ form.username }} <br>
+                        {{ form.password.errors }}
+                        {{ form.password.label }} <br>
+                        {{ form.password }} <br>
+                        {#    {{ form.as_p }}  #}
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <div align="center">
+                        <input type="submit" value="Ingresar" class="boton"/>
+                        <br>
+                        </form>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

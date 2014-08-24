@@ -1,0 +1,337 @@
+/*Estos estilos contiene el MAQUETA PRINCIPAL
+los cuales contiene la cabezera, columna uno(de menu)
+columna dos de contenido, pie de pagina, sombras fondo
+y responsivos adaptables a los navegadores mas populares.*/
+
+body {
+
+    border: none;
+    text-align: center;
+}
+
+div {
+
+    font-size: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+    -ms-box-shadow: 2px 2px 5px #999;
+}
+
+#contenedor {
+
+    margin: 1% 1% 1% 1%;
+    -webkit-box-shadow: 0px 0px 0px #999;
+    -moz-box-shadow: 0px 0px 0px #999;
+    -ms-box-shadow: 0px 0px 0px #999;
+    height: 610px;
+    position: relative;
+    z-index: 2;
+}
+
+#cabecera {
+    border: solid 1px #FFF;
+    margin: 1% 1% 1% 1%;
+    height: 15%;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+
+#columnauno {
+    border: solid 1px #FFF;
+    width: 10%;
+    height: 78%;
+    float: left;
+    margin-rigth: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background: rgba(255, 255, 255, 0.7);
+    text-decoration: blink;
+}
+
+html {
+    background-image: url(../img/bkund/network_cabling1.jpg);
+    height: 100%;
+    -webkit-filter: blur(0px);
+    font-size: 20px;
+}
+
+#columnauno a {
+    text-decoration: none;
+}
+
+#columnados {
+    border: solid 1px #FFF;
+    width: 86.6%;
+    height: 78%;
+    float: left;
+    margin-rigth: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    padding: 1px 1px 1px 1px;
+    /*  background-color : rgba(255, 255, 255, 0.4); */
+    background: rgba(255, 255, 255, 0.7);
+    /*    text-align: justify;*/
+    align: center;
+    overflow: auto;
+}
+
+#pie {
+    border: solid 1px #FFF;
+    clear: both;
+    margin-top: 2px;
+    margin: 1% 1% 1% 1%;
+    height: 5%;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+input[type="button"] {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    text-align: center;
+}
+
+div [name="contacto"] {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+}
+
+label[alt="bienvenida"] {
+    font-size: 17px;
+}
+
+/*Este bloque contiene el FORMATO DE IMAGENES en CSS,
+principalmente para la columna del menu, ya que contiene
+caracterisitcas para el tamano de cada icono que se muestra
+ademas que ayuda a contral los elementos que se visualizan*/
+
+img {
+    text-decoration: none;
+}
+
+img[alt="izquierda"] {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    padding-right: 0px;
+}
+
+img[alt="derecha"] {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    padding-left: 0px;
+}
+
+img[alt="cabezera"] {
+    width: 70%;
+    height: 90px;
+    text-decoration: none;
+    padding-left: 0px;
+}
+
+img[alt="salir"] {
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    padding-left: 50px;
+    align: center;
+}
+
+img[alt="ayuda2"] {
+    width: 48px;
+    height: 48px;
+    text-decoration: none;
+    padding-right: 00px;
+    padding: 0px;
+    padding-bottom: -15px;
+}
+
+img[alt="agregarm"] {
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+    padding-right: 0px;
+    padding: 3px;
+    padding-bottom: 0px;
+}
+
+img[alt="modificar"] {
+    width: 18px;
+    height: 18px;
+    text-decoration: none;
+    padding-right: 0px;
+    padding: 0px;
+    padding-bottom: 0px;
+    align: auto;
+}
+
+img[alt="eliminar"] {
+    width: 18px;
+    height: 18px;
+    text-decoration: none;
+    padding-right: 0px;
+    padding: 0px;
+    padding-bottom: 0px;
+    align: auto;
+}
+
+img[alt="salir2"] {
+    width: 11px;
+    height: 11px;
+    text-decoration: none;
+    padding-right: 0px;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+
+img[alt="iuno"] {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+img[alt="idos"] {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+img[alt="itres"] {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+img[alt="icuatro"] {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+img[alt="icinco"] {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+/*Este bloque contiene LETRAS PERSONALIZADAS
+contiene dos tipos de fuente externas que pueden
+ser cambiadas o utilizadas por otro tipo de fuente
+en varias partes de la aplicacion WEB*/
+
+@font-face {
+    font-family: laletrailustra;
+    src: url(../font/Static.otf);
+}
+
+@font-face {
+    font-family: laletrailustrados;
+}
+
+div * {
+
+    font-family: laletrailustra;
+    font-size: 20px;
+    color: #000;
+    text-shadow: none;
+}
+
+#cabecera {
+    text-align: center;
+    text-zise: 5px;
+    color: #0000;
+}
+
+#columnauno {
+
+    text-align: center;
+    text-zise: 5px;
+    color: #0000;
+}
+
+div [title=
+
+"dos"
+] {
+    font-family: laletrailustra;
+    color: #000;
+    text-align: justify;
+    padding: 1px 1px 1px;
+}
+
+#pie {
+    text-align: center;
+    text-zise: 5px;
+    color: #00000;
+}
+
+#bnsalir {
+    text-align: center;
+    text-zise: 5px;
+    color: yellow;
+
+}
+
+/*Este codigo en CSS contiene la animacion del menu
+creado el EFECTO DE BOTONES al dar clic, y enviarte
+a el hipervinculo correspondiente*/
+
+a:hover {
+    -webkit-filter: opacity(0.5);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+a:active {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+/*
+Este es el codigo de las tablas que se muestran
+para una mejor visualizacion las tablas al ser
+iteradas en forma par o impar, se subrayan para una
+mejor lectura para el usuario, esto deacuerdo al numero
+de elemento que contiene, asi como su correspondiente
+paginador*/
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+table {
+    border: solid 0px;
+    color: rgb(0, 149, 116);
+    text-align: center;
+}
+
+/*Este es el codigo de error que se muestra
+contiene los estilos de un color rojo y
+bordes que pueden ser personalizados, se
+recomienda usarlos con un div */
+
+ul, li {
+    width: inherit;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    background-color: rgba(227, 50, 48, 0.7);
+    -webkit-border-radius: 30px 0px 0px 30px;
+    list-style: none;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>Eliminar marca de material</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <p>¿De verdad desea eliminar "{{ marca }}"? (se eliminaran todos los materiales que
+            contenga)</p>
+        <input type="submit" value="Eliminar" class="boton"/>
+        <input type="button"
+               value="Cancelar" onclick="location.href={% url 'Inventario:listar_marcas' %}"
+               class="boton"/>
+    </form>
+{% endblock %}

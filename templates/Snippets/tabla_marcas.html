@@ -1,0 +1,28 @@
+{% if marcas %}
+    {% load staticfiles %}
+
+    <table>
+        <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Modificar</td>
+            <td>Eliminar</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for marca in marcas %}
+            <tr>
+                <td><a href="{% url 'Inventario:filtro_marca' marca.pk %}">{{ marca.nombre }}</a>
+                </td>
+                <td><a href="{% url 'Inventario:modificar_marca' marca.pk %}">
+                    <img src="{% static 'img/nicons/editar.png' %}" alt="modificar">
+                </a></td>
+                <td><a href="{% url 'Inventario:eliminar_marca' marca.pk %}">
+                    <img src="{% static 'img/nicons/eliminar.png' %}" alt="eliminar">
+                </a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'Snippets/paginacion.html' %}
+{% endif %}

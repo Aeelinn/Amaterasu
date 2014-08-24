@@ -1,0 +1,147 @@
+/*
+Este CSS contiene los estilos del inicio, el tipo de letra
+las entradas en campos de texto e imagenes implementadas
+y el estilo de la ayuda
+*/
+
+@font-face {
+    font-family: laletrailustra;
+    src: url(../font/Static.otf);
+}
+
+input[type="text"], input[type="password"], input[type="button"] {
+    font-family: laletrailustra;
+    font-size: 24px;
+    color: #000;
+    -webkit-border-radius: 5px;
+}
+
+input[type="submit"] {
+    -webkit-border-radius: 2px;
+    text-align: center;
+}
+
+.div {
+
+    height: 280px;
+    width: 330px;
+    margin: 130px auto auto 450px;
+}
+
+html {
+    background-image: url(../img/bkund/network_coverage.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    -webkit-filter: blur(0px);
+    font-family: laletrailustra;
+
+}
+
+table {
+    margin: 0 auto 0 auto;
+
+}
+
+table[alt="tablaheadinicio"] {
+    margin: 0 auto 0 auto;
+
+    border: 0;
+    font-size: 25px;
+    font: bold;
+}
+
+.conte {
+    border: solid 1px #FFF;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    width: 300px;
+    height: auto;
+    margin: 11% auto 0 auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: 2px 5px 15px #999;
+    -webkit-border-radius: 10px 50px 15px;
+}
+
+img[alt="ayuda"] {
+    width: 32px;
+    height: 32px;
+    text-align: end;
+    padding-bottom: 1px;
+}
+
+img[alt="logoadmin"] {
+    width: 32px;
+    height: 32px;
+    text-align: end;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+img[alt="helphead"] {
+    width: 32px;
+    height: 32px;
+    text-align: rigth;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 150px;
+    padding-top: 0px;
+}
+
+img[alt="hombre"] {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding-right: 0px;
+    padding-bottom: -5px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+    text-align: justify;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(0px);
+    padding-right: 10px;
+}
+
+.cabeza {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: auto;
+    height: 100px;
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#agregar {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    height: 350px;
+    width: 350px;
+    color: wheat;
+}
+
+ul, li {
+    width: auto;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    background-color: rgba(227, 50, 48, 0.7);
+    -webkit-border-radius: 30px 0px 0px 30px;
+    list-style-type: none;
+    list-style: none;
+    float: top;
+    text-align: left;
+}

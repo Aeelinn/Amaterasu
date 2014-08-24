@@ -1,0 +1,18 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1 align="center"><big>BUSQUEDA DE MATERIAL</big></h1>
+    <hr>
+    {% block contenido %}
+        <form method="post" action="{% url 'Inventario:buscar_material' %}">
+            {% csrf_token %}
+            <label for="buscar"><b>Material a buscar </b></label><input id="buscar" type="text"
+                                                                        name="buscar" maxlength="45"
+                                                                        value="{{ buscar }}">
+            <input type="submit" value="buscar" class="boton"/>
+        </form>
+        <br/>
+        {% include 'Snippets/tabla_materiales.html' %}
+    {% endblock %}
+{% endblock %}

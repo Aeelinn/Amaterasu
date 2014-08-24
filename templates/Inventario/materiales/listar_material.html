@@ -1,0 +1,15 @@
+{% extends 'Snippets/base.html' %}
+{% load staticfiles %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>LISTADO GENEREAL DE MATERIAL</h1>
+    {% block masmaterial %}
+        <hr>
+        <label>Agregue material </label>
+        <a href="{% url 'Inventario:agregar_material' %}">
+            <img src="{% static 'img/nicons/agregar.png' %}" alt="agregarm">
+        </a>
+    {% endblock %}
+    {% include 'Snippets/tabla_materiales.html' %}
+{% endblock %}

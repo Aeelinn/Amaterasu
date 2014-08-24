@@ -1,0 +1,13 @@
+{% extends 'Snippets/base.html' %}
+{% load staticfiles %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>LISTADO GENERAL DE EDIFICIOS</h1>
+    <hr>
+    <label>Agregar otro edificio </label>
+    <a href="{% url 'Inventario:agregar_edificio' %}">
+        <img src="{% static 'img/nicons/agregar.png' %}" alt="agregarm"></a><br>
+    {% include 'Snippets/tabla_edificios.html' %}
+    <br>
+{% endblock %}

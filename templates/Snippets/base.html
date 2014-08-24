@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <title>Project SAGE</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/coreDos.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/boton.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/jquery.css' %}" rel="stylesheet" type="text/css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div id="contenedor">
+    <div id="cabecera">
+        <div>
+            <img src="{% static 'img/bkund/cabezeraSAGE.png' %}" alt="cabezera">
+        </div>
+    </div>
+    <div id="columnauno">
+        <label alt="bienvenida">Bienvenido: {{ user }}<label>
+        <a href="{% url 'Inventario:user_logout' %}" style="text-decoration:none" title="Usuario">
+            <img src="{% static 'img/nicons/mujer.png' %}" alt="ayuda2">
+            <img src="{% static 'img/nicons/exit.png' %}" alt="salir2">
+        </a>
+        <hr>
+        <a href="{% url 'Inventario:buscar_material' %}" style="text-decoration:none"
+           title="Busqueda de material">
+            <img src="{% static 'img/nicons/busqueda.png' %}" alt="iuno">
+        </a>
+        <br>
+        <a href="{% url 'Inventario:agregar_material' %}" style="text-decoration:none"
+           title="Agregar material">
+            <img src="{% static 'img/nicons/agregar.png' %}" alt="iuno">
+        </a>
+        <br>
+        <a href="{% url 'Inventario:listar_edificios' %}" title="Lista de edificios">
+            <img src="{% static 'img/nicons/edificio.png' %}" alt="idos">
+        </a>
+        <br>
+        <a href="{% url 'Inventario:listar_aulas' %}" title="Lista de aulas">
+            <img src="{% static 'img/nicons/aula.png' %}" alt="itres">
+        </a>
+        <br>
+        <a href="{% url 'Inventario:listar_tipos' %}" title="Tipos de mateial">
+            <img src="{% static 'img/nicons/tipo.png' %}" alt="icuatro">
+        </a>
+        <br>
+        <a href="{% url 'Inventario:listar_marcas' %}" title="Lista de marcas">
+            <img src="{% static 'img/nicons/marca.png' %}" alt="icinco">
+        </a>
+        <hr>
+        <a href="{% static 'ayuda/ManualUsuario.pdf' %}" title="Ayuda">
+            <img src="{% static 'img/nicons/ayuda.png' %}" alt="ayuda2"
+                    >
+        </a>
+    </div>
+    <div id="columnados" align="center">
+        {% block body %}
+        {% endblock %}
+        {#  {% block contenido %} #}
+        {#  {% endblock %} #}
+
+    </div>
+    <div id="pie">
+        <a href="javascript:history.back();" style="text-decoration:none">
+
+            <img src="{% static 'img/nicons/izquierda.png' %}" width:25px height:25px
+                 alt="izquierda">
+        </a>
+        <a href="{% url 'Inventario:buscar_material' %}" style="text-decoration:none">
+            BUSCAR</a> -
+        <a href="{% url 'Inventario:agregar_material' %}" style="text-decoration:none">
+            AGREGAR MATERIAL</a> -
+        <a href="{% url 'Inventario:listar_edificios' %}" style="text-decoration:none">
+            EDIFICIOS</a> -
+        <a href="{% url 'Inventario:listar_aulas' %}" style="text-decoration:none">
+            AULAS</a> -
+        <a href="{% url 'Inventario:listar_tipos' %}" style="text-decoration:none">
+            TIPOS</a> -
+        <a href="{% url 'Inventario:listar_marcas' %}" style="text-decoration:none">
+            MARCAS</a> -
+        <a href="{% static 'ayuda/ManualUsuario.pdf' %}" style="text-decoration:none">
+            AYUDA</a> |
+        <a href="{% url 'Inventario:user_logout' %}" id="bnsalir"
+           style="text-decoration-color:navy "
+                >
+            SALIR
+        </a>
+        <a href="javascript:history.forward();" style="text-decoration:none">
+            <img src="{% static 'img/nicons/derecha.png' %}" width:25px height:25px alt="derecha">
+        </a>
+    </div>
+
+</div>
+</body>
+</html>

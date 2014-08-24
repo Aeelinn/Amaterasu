@@ -1,0 +1,15 @@
+{% extends 'Snippets/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>Eliminar material</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <p>¿De verdad desea eliminar "{{ material }}"?</p>
+        <input type="submit" value="Eliminar" class="boton"/>
+        <input type="button"
+               value="Cancelar" onclick="location.href='javascript:history.back()';"
+               class="boton"/>
+    </form>
+{% endblock %}

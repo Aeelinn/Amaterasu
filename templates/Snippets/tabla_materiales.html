@@ -1,0 +1,51 @@
+{% if materiales %}
+    {% load staticfiles %}
+
+    <table>
+        <thead>
+        <tr>
+            <td><b>Código interno</b></td>
+            <td><b>Código UTEZ</b></td>
+            <td><b>Código Vendedor</b></td>
+            <td><b>Ubicación</b></td>
+            <td><b>Tipo</b></td>
+            <td><b>Marca</b></td>
+            <td><b>Modificar</b></td>
+            <td><b>Eliminar</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for material in materiales %}
+            <tr>
+                <td>{{ material.codigo_interno }}</td>
+                <td>
+                    {% if material.codigo_utez %}
+                        {{ material.codigo_utez }}
+                    {% else %}
+                        (Ninguno)
+                    {% endif %}
+                </td>
+                <td>
+                    {% if material.codigo_vendedor %}
+                        {{ material.codigo_vendedor }}
+                    {% else %}
+                        (Ninguno)
+                    {% endif %}
+                </td>
+                <td>{{ material.ubicacion }}</td>
+                <td>{{ material.tipo }}</td>
+                <td>{{ material.marca }}</td>
+                <td><a href="{% url 'Inventario:modificar_material' material.pk %}">
+                    <img src="{% static 'img/nicons/editar.png' %}" alt="modificar">
+                </a></td>
+                <td><a href="{% url 'Inventario:eliminar_material' material.pk %}">
+                    <img src="{% static 'img/nicons/eliminar.png' %}" alt="eliminar">
+                </a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'Snippets/paginacion.html' %}
+{% else %}
+    <p>No hay material que mostrar</p>
+{% endif %}

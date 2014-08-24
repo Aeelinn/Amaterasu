@@ -1,0 +1,13 @@
+{% extends 'Snippets/base.html' %}
+{% load staticfiles %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    <h1>LISTA GENERAL DE MARCAS</h1>
+    <hr>
+    <label>Agregar marca</label>
+    <a href="{% url 'Inventario:agregar_marca' %}">
+        <img src="{% static 'img/nicons/agregar.png' %}" alt="agregarm">
+    </a>
+    {% include 'Snippets/tabla_marcas.html' %}
+{% endblock %}

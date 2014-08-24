@@ -1,0 +1,26 @@
+{% if tipos %}
+    {% load staticfiles %}
+    <table>
+        <thead>
+        <tr>
+            <td><b>Nombre</b></td>
+            <td><b>Modificar</b></td>
+            <td><b>Eliminar</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tipo in tipos %}
+            <tr>
+                <td><a href="{% url 'Inventario:filtro_tipo' tipo.pk %}">{{ tipo.nombre }}</a></td>
+                <td><a href="{% url 'Inventario:modificar_tipo' tipo.pk %}">
+                    <img src="{% static 'img/nicons/editar.png' %}" alt="modificar">
+                </a></td>
+                <td><a href="{% url 'Inventario:eliminar_tipo' tipo.pk %}">
+                    <img src="{% static 'img/nicons/eliminar.png' %}" alt="eliminar">
+                </a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'Snippets/paginacion.html' %}
+{% endif %}
