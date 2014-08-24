@@ -68,8 +68,8 @@ WSGI_APPLICATION = 'Tsukuyomi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SAGE',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.db',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '',
