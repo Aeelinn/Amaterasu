@@ -1,8 +1,10 @@
+from datetime import date
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.urlresolvers import reverse_lazy
 from django.db.models import Q
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views.generic.list import ListView
@@ -11,7 +13,8 @@ from reportlab.lib.pagesizes import landscape, letter
 from reportlab.pdfgen import canvas
 from reportlab.platypus.doctemplate import SimpleDocTemplate
 from reportlab.platypus.tables import Table, TableStyle
-from Inventario.forms import LoginForm  # , MaterialForm, EdificioForm, AulaForm, TipoForm, MarcaForm
+# , MaterialForm, EdificioForm, AulaForm, TipoForm, MarcaForm
+from Inventario.forms import LoginForm
 from Inventario.models import Material, Edificio, Aula, Tipo, Marca
 from Tsukuyomi.settings import PAGINATION_ITEMS
 
@@ -328,8 +331,6 @@ def reporte_general_material(request):
                 material.cantidad,
             ]
 
-    c = canvas.Canvas("report.pdf", landscape(letter))
-
     data = [(
                 "Código interno",
                 "Código UTEZ",
@@ -343,7 +344,11 @@ def reporte_general_material(request):
     for material in material_iterator():
         data.append(material)
 
-    doc = SimpleDocTemplate("simple_table_grid.pdf", pagesize=landscape(letter))
+    response = HttpResponse(content_type='application/pdf')
+    response[
+        'Content-Disposition'] = 'attachment; filename="reporte material %s.pdf"' % date.today()
+
+    doc = SimpleDocTemplate(response, pagesize=landscape(letter))
 
     # container for the 'Flowable' objects
     elements = []
@@ -358,7 +363,6 @@ def reporte_general_material(request):
 
         # Color cabecera tabla
         ('INNERGRID', (0, 0), (-1, 0), 1, colors.white),
-        #('BOX', (0, 0), (-1, 0), 1, colors.white),
 
         # Color tabla
         ('INNERGRID', (0, 1), (-1, -1), 1, colors.black),
@@ -378,6 +382,4 @@ def reporte_general_material(request):
     # write the document to disk
     doc.build(elements)
 
-    c.save()
-
-    return redirect('Inventario:buscar_material')
+    return response
