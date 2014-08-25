@@ -4,6 +4,9 @@
 {% block body %}
     <h1 align="center"><big>BUSQUEDA DE MATERIAL</big></h1>
     <hr>
+    <a href="{% url 'Inventario:reporte_material' %}">
+        Reporte PDF
+    </a>
     {% block contenido %}
         <form method="post" action="{% url 'Inventario:buscar_material' %}">
             {% csrf_token %}

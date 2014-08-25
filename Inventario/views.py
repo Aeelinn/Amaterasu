@@ -6,7 +6,12 @@ from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views.generic.list import ListView
-from Inventario.forms import LoginForm, MaterialForm, EdificioForm, AulaForm, TipoForm, MarcaForm
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import landscape, letter
+from reportlab.pdfgen import canvas
+from reportlab.platypus.doctemplate import SimpleDocTemplate
+from reportlab.platypus.tables import Table, TableStyle
+from Inventario.forms import LoginForm  # , MaterialForm, EdificioForm, AulaForm, TipoForm, MarcaForm
 from Inventario.models import Material, Edificio, Aula, Tipo, Marca
 from Tsukuyomi.settings import PAGINATION_ITEMS
 
@@ -304,3 +309,75 @@ def login_form(request):
 def user_logout(request):
     logout(request)
     return redirect('Inventario:login_form')
+
+
+def reporte_general_material(request):
+    def material_iterator():
+        """
+        Generador para evitar el consumo exesivo de memoria debido a la
+        cantidad de elementos en el inventario
+        """
+        for material in Material.objects.all():
+            yield [
+                material.codigo_interno,
+                material.codigo_utez,
+                material.codigo_vendedor,
+                material.ubicacion,
+                material.marca,
+                material.tipo,
+                material.cantidad,
+            ]
+
+    c = canvas.Canvas("report.pdf", landscape(letter))
+
+    data = [(
+                "Código interno",
+                "Código UTEZ",
+                "Código fabricante",
+                "Ubicación",
+                "Marca",
+                "Tipo",
+                "Cantidad",
+            )]
+
+    for material in material_iterator():
+        data.append(material)
+
+    doc = SimpleDocTemplate("simple_table_grid.pdf", pagesize=landscape(letter))
+
+    # container for the 'Flowable' objects
+    elements = []
+
+    t = Table(data)
+
+    style = [
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+        ('BACKGROUND', (0, 0), (-1, 0), colors.black),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('VALIGN', (0, -1), (-1, -1), 'MIDDLE'),
+
+        # Color cabecera tabla
+        ('INNERGRID', (0, 0), (-1, 0), 1, colors.white),
+        #('BOX', (0, 0), (-1, 0), 1, colors.white),
+
+        # Color tabla
+        ('INNERGRID', (0, 1), (-1, -1), 1, colors.black),
+        ('BOX', (0, 0), (-1, -1), 1, colors.black),
+    ]
+
+    for i in range(1, len(data)):
+        if i % 2 == 0:
+            style.append(('BACKGROUND', (0, i), (-1, i), colors.aliceblue))
+        else:
+            style.append(('BACKGROUND', (0, i), (-1, i), colors.aquamarine))
+
+    t.setStyle(TableStyle(style))
+
+    elements.append(t)
+
+    # write the document to disk
+    doc.build(elements)
+
+    c.save()
+
+    return redirect('Inventario:buscar_material')

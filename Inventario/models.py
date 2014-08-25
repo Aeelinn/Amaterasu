@@ -48,3 +48,6 @@ class Material(models.Model):
                                          self.codigo_vendedor or 'NA',
                                          self.tipo,
                                          self.marca)
+
+    class Meta:
+        ordering = ("tipo", "marca", "ubicacion")

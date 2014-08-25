@@ -4,7 +4,7 @@ from Inventario.views import EliminarMaterial, ListarEdificios, EliminarEdificio
     AgregarAula, ModificarAula, EliminarAula, ListarTipos, AgregarTipo, ModificarTipo, EliminarTipo, \
     ListarMarcas, \
     ModificarMarca, AgregarMarca, EliminarMarca, AgregarMaterial, ModificarMaterial, \
-    ModificarEdificio, AgregarEdificio
+    ModificarEdificio, AgregarEdificio, reporte_general_material
 
 urlpatterns = patterns(
     'Inventario.views',
@@ -12,6 +12,9 @@ urlpatterns = patterns(
     # Sesiones
     url(r'^login/$', 'login_form', name='login_form'),
     url(r'^logout/$', 'user_logout', name='user_logout'),
+
+    # Reporte PDF
+    url(r'^reporte_general/$', 'reporte_general_material', name='reporte_material'),
 
     # CRUD de usuarios
     url(r'^edificios/$', login_required(ListarEdificios.as_view()), name='listar_usuarios'),
